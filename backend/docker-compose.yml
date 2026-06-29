@@ -1,0 +1,21 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: secure-fileshare-db
+    stdin_open: true  
+    tty: true          
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: securefileshare
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
