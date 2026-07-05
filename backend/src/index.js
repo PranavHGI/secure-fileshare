@@ -4,7 +4,13 @@ const rateLimit = require('express-rate-limit');
 require('dotenv').config();
 
 const app = express();
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }));
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://secure-fileshare-sepia.vercel.app'
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 // Rate limiting on login only (not register)
