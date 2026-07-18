@@ -5,7 +5,7 @@ import AuthLayout, { AuthLink } from '../components/AuthLayout';
 
 function getRegisterError(err) {
   if (!err.response) {
-    return 'Cannot reach server. Start the backend on port 3000.';
+    return 'Cannot reach server';
   }
   const { status, data } = err.response;
   if (status === 503) return data?.error || 'Database is not running. Start PostgreSQL.';

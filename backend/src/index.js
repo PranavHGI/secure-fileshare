@@ -5,9 +5,7 @@ require('dotenv').config();
 
 const app = express();
 app.use(cors({
-  origin: [
-    'https://secure-fileshare-sepia.vercel.app'
-  ],
+  origin: [process.env.origin_allowed],
   credentials: true
 }));
 app.use(express.json());

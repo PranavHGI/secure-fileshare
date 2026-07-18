@@ -29,6 +29,8 @@ export default function Login() {
     setError('');
     setLoading(true);
     try {
+      console.log(api);
+      
       const res = await api.post('/auth/login', {
         email: email.trim().toLowerCase(),
         password

@@ -45,7 +45,7 @@ router.post('/register', async (req, res) => {
   } catch (e) {
     console.error('Register error:', e);
     if (isDatabaseError(e)) {
-      return res.status(503).json({ error: 'Database is not running. Start PostgreSQL on port 5432.' });
+      return res.status(503).json({ error: 'Database is not connected' });
     }
     res.status(500).json({ error: 'Registration failed. Try again later.' });
   }
@@ -75,7 +75,7 @@ router.post('/login', async (req, res) => {
   } catch (e) {
     console.error('Login error:', e);
     if (isDatabaseError(e)) {
-      return res.status(503).json({ error: 'Database is not running. Start PostgreSQL on port 5432.' });
+      return res.status(503).json({ error: 'Database is not connected' });
     }
     res.status(500).json({ error: 'Login failed. Try again later.' });
   }
