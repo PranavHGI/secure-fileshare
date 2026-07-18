@@ -1,12 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
-<<<<<<< HEAD
-
-const api = axios.create({ baseURL:  import.meta.env.VITE_API_URL});
-=======
-import api from '../api/axios';
->>>>>>> ece1cbb4310853b84eed394adf06ba37f25c2031
 
 export default function ShareDownload() {
   const { token } = useParams();
